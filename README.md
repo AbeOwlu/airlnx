@@ -11,7 +11,7 @@ go build
 
 A linux compatible, `airlnx` is provided in this repo. The application ca be exucuted passing required arguments to the executable, e.g;
 ```
-./airlnx.exe BOOK A1 1
+./airlnx BOOK A1 1
 ```
 
 If less arguments than required are passed, a helpful usage propmt is printed:
