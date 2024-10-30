@@ -1,19 +1,19 @@
-package main
+// package main
 
-import (
-	"testing"
-	"regexp"
-	"fmt"
+// import (
+// 	"testing"
+// 	"regexp"
+// 	"fmt"
 
-	"github.com/stretchr/testify/assert"
-)
+// 	"github.com/stretchr/testify/assert"
+// )
 
-func TestBookSeats(t *testing.T) {
-	p := make(map[string]string)
-	// call InitiBooking to create booking file store
-	// clean up booking file store create during tests
-	bookFileHandle, err := InitBooking(p)
-	
-}
+// func TestBookSeats(t *testing.T) {
+// 	p := make(map[string]string)
+// 	// call InitiBooking to create booking file store
+// 	// clean up booking file store create during tests
+// 	bookFileHandle, err := InitBooking(p)
 
-func TestCancelSeats
+// }
+
+// func TestCancelSeats
