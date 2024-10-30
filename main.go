@@ -12,7 +12,7 @@ import (
 // cast curent parsed action parameter to uppercase - for usability
 // var CommandLine []string = flag.Args()
 var Usage = func() {
-	fmt.Fprintf(os.Stderr, "FAIL.\nExample Usage of %s:\n", os.Args[0])
+	fmt.Fprintf(os.Stderr, "Example Usage of %s:\n", os.Args[0])
 	PrintDefault()
 }
 
@@ -64,7 +64,7 @@ func main() {
 		status, err := BookSeat(planeBooking, CommandLine[2], seatCount)
 		if err != nil {
 			fmt.Print(status)
-			log.Fatal(err)
+			log.Print(err)
 		}
 		err = UpdateBookingDB(planeBooking, bookingFile)
 		if err != nil {
@@ -73,13 +73,20 @@ func main() {
 		fmt.Print(status)
 	case "CANCEL":
 		if len(CommandLine) == 4 {
-			fmt.Print("FAIL")
-			log.Fatal("Invalid Cancellation Command - consecutive seat counts provided")
+			seatCount, err = strconv.Atoi(CommandLine[3])
+			if err != nil {
+				fmt.Printf("FAIL")
+				log.Fatal(err)
+			}
+			if seatCount > 1 {
+				fmt.Print("FAIL")
+				log.Fatal("Invalid Cancellation Command - consecutive seat counts provided")
+			}
 		}
 		status, err := CancelSeat(planeBooking, CommandLine[2])
 		if err != nil {
 			fmt.Print(status)
-			log.Fatal(err)
+			log.Print(err)
 		}
 		err = UpdateBookingDB(planeBooking, bookingFile)
 		if err != nil {

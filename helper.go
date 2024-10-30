@@ -155,5 +155,5 @@ func SeatOpen(planeSeats map[string]string, seat string) (bool, error) {
 }
 
 func PrintDefault() {
-	fmt.Fprintf(os.Stderr, "%s %s %s %s", os.Args[0], "BOOK", "A0", "1")
+	fmt.Fprintf(os.Stderr, "try: %s %s %s %s", os.Args[0], "BOOK", "A0", "1")
 }
